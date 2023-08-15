@@ -34,6 +34,7 @@ import defaultProps from './_defaultProps';
 import themeSettins from './models/settings';
 import Form, {formConfigItem} from './components/form';
 import SearchForm from './components/search-form';
+import CustomerRouter from './router';
 
 const formConfig:Array<formConfigItem> = [
   {
@@ -440,19 +441,6 @@ const App = function() {
               token={{
                 paddingInlinePageContainerContent: num,
               }}
-              extra={[
-                <Button key="3">操作11</Button>,
-                <Button key="2">操作22</Button>,
-                <Button
-                  key="1"
-                  type="primary"
-                  onClick={() => {
-                    setNum(num > 0 ? 0 : 40);
-                  }}
-                >
-                  主操作
-                </Button>,
-              ]}
               subTitle="简单的描述"
               // footer={[
               //   <Button key="3">重置</Button>,
@@ -468,9 +456,10 @@ const App = function() {
                 }}
               >
                 <div>
-                <ProFormText initialValue="prop"/>
+                  {CustomerRouter()}
+                {/* <ProFormText initialValue="prop"/>
                 <Form formConfig={formConfig}/>
-                <SearchForm/>
+                <SearchForm/> */}
 
                 </div>
               </ProCard>

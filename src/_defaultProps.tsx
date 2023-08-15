@@ -13,7 +13,7 @@ const Config =  {
         path: '/welcome',
         name: '欢迎',
         icon: <SmileFilled />,
-        component: './Welcome',
+        //component: './Welcome',
       },
       {
         path: '/admin',
@@ -23,20 +23,20 @@ const Config =  {
         component: './Admin',
         routes: [
           {
-            path: '/admin/sub-page1',
-            name: '一级页面',
+            path: '/ms1',
+            name: '页面1',
             icon: 'https://gw.alipayobjects.com/zos/antfincdn/upvrAjAPQX/Logo_Tech%252520UI.svg',
-            component: './Welcome',
+            //component: './Welcome',
           },
           {
-            path: '/admin/sub-page2',
-            name: '二级页面',
+            path: '/ms2',
+            name: '页面2',
             icon: <CrownFilled />,
-            component: './Welcome',
+            //component: './Welcome',
           },
           {
             path: '/admin/sub-page3',
-            name: '三级页面',
+            name: '三级页面33',
             icon: <CrownFilled />,
             component: './Welcome',
           },
