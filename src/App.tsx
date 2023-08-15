@@ -8,13 +8,14 @@ import {
   QuestionCircleFilled,
   SearchOutlined,
 } from '@ant-design/icons';
-import type { ProSettings } from '@ant-design/pro-components';
 import {
+  ProSettings,
   PageContainer,
   ProCard,
   ProConfigProvider,
   ProLayout,
   SettingDrawer,
+  ProFormText,ProForm
 } from '@ant-design/pro-components';
 import { css } from '@emotion/css';
 import {
@@ -25,10 +26,45 @@ import {
   Input,
   Popover,
   theme,
+  Checkbox,
+  DatePicker
 } from 'antd';
 import React, { useState } from 'react';
 import defaultProps from './_defaultProps';
 import themeSettins from './models/settings';
+import Form, {formConfigItem} from './components/form';
+import SearchForm from './components/search-form';
+
+const formConfig:Array<formConfigItem> = [
+  {
+    label: '用户名',
+    name: 'username',
+    type: Input,
+    props:{}
+  },
+  {
+    label: '密码',
+    name: 'pwd',
+    type: Input.Password,
+    props:{}
+  },
+  {
+    label: '生日',
+    name: 'birthday',
+    type: DatePicker,
+    props:{
+      name:'birthday'
+    }
+  },
+  {
+    label: '记住我',
+    name: 'remember',
+    type: Checkbox,
+    props:{
+      name:'remember'
+    }
+  }
+]
 
 const Item: React.FC<{ children: React.ReactNode }> = (props) => {
   const { token } = theme.useToken();
@@ -431,7 +467,12 @@ const App = function() {
                   minHeight: 800,
                 }}
               >
-                <div></div>
+                <div>
+                <ProFormText initialValue="prop"/>
+                <Form formConfig={formConfig}/>
+                <SearchForm/>
+
+                </div>
               </ProCard>
             </PageContainer>
               <div style={{textAlign:'center', height:100}}>power by bigerfe。。。。。</div>
